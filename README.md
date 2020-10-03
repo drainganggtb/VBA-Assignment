@@ -2,7 +2,7 @@
 
 # Background
 
-In this activity, I utilized VBA to manipulate and elucidate data from a spreadsheet of real-world stock data from 2014-2016. The workbook which was used was titled Multiple_year_stock_data.xlsx, and its size prevents it from being accessed directly on GitHub. Test data (alphebetical_testing.xlsx) was also used to develop the scripts.
+In this activity, I utilized VBA to manipulate and elucidate data from a spreadsheet of real-world stock data from 2014-2016. The workbook titled Multiple_year_stock_data.xlsx, is far too large of a file to be accessible in this GitHub repo. Test data (alphebetical_testing.xlsx) was also used to develop the scripts.
 
 Microsoft Office Home and Student 2019 provided the Excel application which was utilized in Visual Basic Coding. Additionally, I used a PC with Windows 10.
 
