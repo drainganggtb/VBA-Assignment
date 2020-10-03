@@ -8,6 +8,23 @@ Microsoft Office Home and Student 2019 provided the Excel application which was 
 
 # What did I do with the data?
 
-The code is held in the file VBA_Stock_Calculations.bas in this repository
+The code is held in the file VBA_Stock_Calculations.bas within this repository. Once this is downloaded, the steps to run this program after opening up the multi-year stock data workbook are as follows:
+- Open up Visual Basic in Excel through the Developer tab
+- Import the .bas file by doing **File -> Import File**
+- Run the macro by pressing the green play button on the top menu of the interface
+
+After following these steps, the script will loop through each worksheet in the file and output various metrics for characterizing the stocks.
+Here is what the script outputs on each page of the workbook:
+- The ticker associated with each stock
+- Yearly change from opening price to closing price
+- Percent change from the beginning of the year to end of the year (closing price - opening price)
+- Total volume of stock
+- Conditional formatting on the yearly changes with green, yellow, and red to indicate growth, stagnation, or decline in stock price
+- A separate return of the stock with the greatest percent increase, greatest percent decrease, and greatest total volume
+
+#Script Output
+The results of the script can be viewed in the **Screenshots** folder of this repository. 
+
+
 
 
