@@ -42,8 +42,8 @@ For Each ws In Worksheets
     ws.Range("L1").Value = "Total Stock Volume"
     
     'initialize variables for each worksheet
-    ticker = ""
     number_tickers = 0
+    ticker = ""
     opening_price = 0
     yearly_change = 0
     percent_change = 0
@@ -52,7 +52,7 @@ For Each ws In Worksheets
     'Nested for loop, loop through list of tickers, i is 1 to skip header -> For loop
     For i = 2 To lastrow
         'return our ticker value
-        ticker = Cells(i, 3).Value
+        ticker = Cells(i, 1).Value
         
         'returns the opening price for that ticker
         If opening_price = 0 Then
@@ -111,55 +111,60 @@ For Each ws In Worksheets
         
     Next i
     
-        'BONUS SECTION -- displays greatest % increase and decrease, greatest total volume for each year, will go in column O, also adding ticker and value
-        Range("O3").Value = "Greatest Percent Decrease"
-        Range("O4").Value = "Greatest Total Volume"
-        Range("P1").Value = "Ticker"
-        Range("Q1").Value = "Value"
-        
-         ' Get the last row
-        lastRowState = ws.Cells(Rows.Count, "I").End(xlUp).Row
-        
-        ' have to initialize variables, set them to first row
-        greatest_percent_increase = Cells(2, 11).Value
-        greatest_percent_increase_ticker = Cells(2, 9).Value
-        greatest_percent_decrease = Cells(2, 11).Value
-        greatest_percent_decrease_ticker = Cells(2, 9).Value
-        greatest_stock_volume = Cells(2, 12).Value
-        greatest_stock_volume_ticker = Cells(2, 9).Value
+        ' had trouble with the bonus section, in specifics the ticker and value columns of greatest percent increase and decrease.
+        ' The volume ticker and values did not have any issues. However, I couldn't get all of them to output correctly -- I just can't figure out my issue.
         
         
-        ' loops through list of tickers, starts after header
-        For i = 2 To lastRowState
-        
-            ' Find the greatest percent increase
-            If Cells(i, 11).Value > greatest_percent_increase Then
-                greatest_percent_increase = Cells(i, 11).Value
-                greatest_percent_increase_ticker = Cells(i, 9).Value
-            End If
-            
-            ' Find the greatest percent decrease
-            If Cells(i, 11).Value < greatest_percent_decrease Then
-                greatest_percent_decrease = Cells(i, 11).Value
-                greatest_percent_decrease_ticker = Cells(i, 9).Value
-            End If
-            
-            ' Find the greatest stock volume
-            If Cells(i, 12).Value > greatest_stock_volume Then
-                greatest_stock_volume = Cells(i, 12).Value
-                greatest_stock_volume_ticker = Cells(i, 9).Value
-            End If
-            
-        Next i
-        
-        ' Add the values we elucidated into the worksheet
-        Range("P2").Value = Format(greatest_percent_increase_ticker, "Percent")
-        Range("Q2").Value = Format(greatest_percent_increase, "Percent")
-        Range("P3").Value = Format(greatest_percent_decrease_ticker, "Percent")
-        Range("Q3").Value = Format(greatest_percent_decrease, "Percent")
-        Range("P4").Value = greatest_stock_volume_ticker
-        Range("Q4").Value = greatest_stock_volume
-        
+    
+'        'BONUS SECTION -- displays greatest % increase and decrease, greatest total volume for each year, will go in column O, also adding ticker and value
+'        Range("O2").Value = "Greatest Percent Increase"
+'        Range("O3").Value = "Greatest Percent Decrease"
+'        Range("O4").Value = "Greatest Total Volume"
+'        Range("P1").Value = "Ticker"
+'        Range("Q1").Value = "Value"
+'
+'        lastrow = ws.Cells(Rows.Count, "I").End(xlUp).Row
+'
+'        ' have to initialize variables, set them to first row
+'        greatest_percent_increase = Cells(2, 11).Value
+'        greatest_percent_increase_ticker = Cells(2, 9).Value
+'        greatest_percent_decrease = Cells(2, 11).Value
+'        greatest_percent_decrease_ticker = Cells(2, 9).Value
+'        greatest_stock_volume = Cells(2, 12).Value
+'        greatest_stock_volume_ticker = Cells(2, 9).Value
+'
+'
+'        ' loops through list of tickers, starts after header
+'        For i = 2 To lastrow
+'
+'            ' Find the greatest percent increase
+'            If Cells(i, 11).Value > greatest_percent_increase Then
+'                greatest_percent_increase = Cells(i, 11).Value
+'                greatest_percent_increase_ticker = Cells(i, 9).Value
+'            End If
+'
+'            ' Find the greatest percent decrease
+'            If Cells(i, 11).Value < greatest_percent_decrease Then
+'                greatest_percent_decrease = Cells(i, 11).Value
+'                greatest_percent_decrease_ticker = Cells(i, 9).Value
+'            End If
+'
+'            ' Find the greatest stock volume
+'            If Cells(i, 12).Value > greatest_stock_volume Then
+'                greatest_stock_volume = Cells(i, 12).Value
+'                greatest_stock_volume_ticker = Cells(i, 9).Value
+'            End If
+'
+'        Next i
+'
+'        ' Add the values we elucidated into the worksheet
+'        Range("P2").Value = Format(greatest_percent_increase_ticker, "Percent")
+'        Range("Q2").Value = Format(greatest_percent_increase, "Percent")
+'        Range("P3").Value = Format(greatest_percent_decrease_ticker, "Percent")
+'        Range("Q3").Value = Format(greatest_percent_decrease, "Percent")
+'        Range("P4").Value = greatest_stock_volume_ticker
+'        Range("Q4").Value = greatest_stock_volume
+'
 Next ws
     
     
