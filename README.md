@@ -23,7 +23,7 @@ Here is what the script outputs on each page of the workbook:
 - Conditional formatting on the yearly changes with green, yellow, and red to indicate growth, stagnation, or decline in stock price
 - A separate return of the stock with the greatest percent increase, greatest percent decrease, and greatest total volume
 
-#Script Output
+# Script Output
 
 The results of the script can be viewed in the **Screenshots** folder of this repository. 
 
